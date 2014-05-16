@@ -25,6 +25,10 @@ func init() {
 			os.Exit(1)
 		}
 
+		fmt.Println(roomsList)
+		fmt.Println(account)
+		fmt.Println(token)
+
 		roomIDStrings := strings.Split(roomsList, ",")
 		roomIDs := []int{}
 
@@ -121,16 +125,27 @@ func (a *adapter) Run() {
 	}
 }
 
-func (a *adapter) Send(roomID, msg string) {
+func (a *adapter) Send(roomID, msg string, messageType string) {
 	id, _ := strconv.Atoi(roomID)
 	room := campfire.Room{
 		Connection: a.client.Connection,
 		ID:         id,
 	}
 
-	err := room.SendText(msg)
-	if err != nil {
-		log.Printf("Error sending to room %d: %v\n", roomID, err)
+	errorMessage := false
+	if messageType == "text" {
+		err := room.SendText(msg)
+		if err != nil {
+			errorMessage = true
+		}
+	} else {
+		err := room.SendPaste(msg)
+		if err != nil {
+			errorMessage = true
+		}
+	}
+	if errorMessage != false {
+		//		log.Printf("Error sending to room %d: %v\n", roomID, err)
 	}
 }
 

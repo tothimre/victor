@@ -164,6 +164,6 @@ func OnlyAllow(userNames []string, action func(s State)) func(State) {
 			}
 		}
 
-		s.Chat().Send(s.Message().ChannelID(), fmt.Sprintf("Sorry, %s. I can't let you do that.", actual))
+		s.Chat().Send(s.Message().ChannelID(), fmt.Sprintf("Sorry, %s. I can't let you do that.", actual), "text")
 	}
 }

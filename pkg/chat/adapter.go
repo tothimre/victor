@@ -6,6 +6,10 @@ import (
 	"github.com/gorilla/mux"
 )
 
+const (
+	MSG_TYPE_TEXT = "text"
+)
+
 var adapters = map[string]InitFunc{}
 
 func Register(name string, init InitFunc) {
@@ -26,7 +30,7 @@ type InitFunc func(Robot) Adapter
 
 type Adapter interface {
 	Run()
-	Send(string, string)
+	Send(string, string, string)
 	Stop()
 }
 

@@ -46,7 +46,7 @@ func (s *slack) Run() {
 	}).Methods("POST")
 }
 
-func (s *slack) Send(channelID, msg string) {
+func (s *slack) Send(channelID, msg string, messageType string) {
 	body, err := json.Marshal(&outgoingMessage{
 		Channel:  channelID,
 		Username: s.robot.Name(),

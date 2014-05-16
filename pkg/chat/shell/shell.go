@@ -40,7 +40,7 @@ func (a *Adapter) Run() {
 	}
 }
 
-func (a *Adapter) Send(channelID, msg string) {
+func (a *Adapter) Send(channelID, msg string, messageType string) {
 	fmt.Println("SEND:", msg)
 }
 
