@@ -3,7 +3,7 @@ package campfire
 import (
 	"fmt"
 	"github.com/brettbuddin/campfire"
-	"github.com/brettbuddin/victor/pkg/chat"
+	"github.com/tothimre/victor/pkg/chat"
 	"log"
 	"os"
 	"strconv"

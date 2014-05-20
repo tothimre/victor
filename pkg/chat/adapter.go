@@ -2,8 +2,8 @@ package chat
 
 import (
 	"fmt"
-	"github.com/brettbuddin/victor/pkg/store"
 	"github.com/gorilla/mux"
+	"github.com/tothimre/victor/pkg/store"
 )
 
 const (

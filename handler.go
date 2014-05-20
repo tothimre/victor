@@ -1,7 +1,7 @@
 package victor
 
 import (
-	"github.com/brettbuddin/victor/pkg/chat"
+	"github.com/tothimre/victor/pkg/chat"
 )
 
 type Handler interface {

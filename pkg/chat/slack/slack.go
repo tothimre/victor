@@ -3,7 +3,7 @@ package slack
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/brettbuddin/victor/pkg/chat"
+	"github.com/tothimre/victor/pkg/chat"
 	"log"
 	"net/http"
 	"net/url"

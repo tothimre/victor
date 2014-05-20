@@ -2,8 +2,8 @@ package victor
 
 import (
 	"fmt"
-	"github.com/brettbuddin/victor/pkg/httpserver"
 	"github.com/gorilla/mux"
+	"github.com/tothimre/victor/pkg/httpserver"
 	"io/ioutil"
 	"net/http"
 )
