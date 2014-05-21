@@ -138,14 +138,19 @@ func (a *adapter) Send(roomID, msg string, messageType string) {
 		if err != nil {
 			errorMessage = true
 		}
-	} else {
+	} else if messageType == "paste" {
 		err := room.SendPaste(msg)
+		if err != nil {
+			errorMessage = true
+		}
+	} else if messageType == "sound" {
+		err := room.SendSound(msg)
 		if err != nil {
 			errorMessage = true
 		}
 	}
 	if errorMessage != false {
-		//		log.Printf("Error sending to room %d: %v\n", roomID, err)
+		 //log.Printf("Error sending to room %d: %v\n", roomID, err)
 	}
 }
 
